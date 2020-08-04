@@ -1,0 +1,24 @@
+swagger: '2.0'
+basePath: /v1
+paths:
+  '/users/{city}':
+    parameters:
+      - name: city
+        in: path
+        required: true
+        type: string
+        description: the name of the city
+    get:
+      responses:
+        '200':
+          description: Success
+      operationId: get_users
+      description: Retrieves users who are listed as either living in the requested city, or whose current coordinates are within a 50 mile radius of that city.
+
+info:
+  title: Users API
+  version: '1.0'
+produces:
+  - application/json
+consumes:
+  - application/json
